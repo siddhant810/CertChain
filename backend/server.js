@@ -141,9 +141,13 @@ app.post("/verify-certificate-hash", async (req, res) => {
       txHash: txStore[hash] || "N/A",
     });
   } catch (err) {
-    console.error("Verify hash error:", err);
-    res.status(500).json({ valid: false, message: err.message });
-  }
+  console.error("Verify file error:", err);
+
+  return res.json({
+    valid: false,
+    message: "The certificate is invalid or has been revoked"
+  });
+}
 });
 
 /* ─────────────────────────────────────────
@@ -169,4 +173,10 @@ app.post("/revoke-certificate", async (req, res) => {
 
 app.listen(5000, () => {
   console.log("✅ Server running on http://localhost:5000");
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

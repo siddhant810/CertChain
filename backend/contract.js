@@ -1,13 +1,15 @@
 const { ethers } = require("ethers");
 
-const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545");
+require("dotenv").config();
+
+const provider = new ethers.providers.JsonRpcProvider(process.env.ALCHEMY_URL);
 
 const privateKey =
-  "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+  "317f66e064447c1ffbb70e432c50c3808f6f5a6e6e08a79cdb1aaae2eaa8e3c8";
 
-const wallet = new ethers.Wallet(privateKey, provider);
+const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const contractAddress = "0xfCB8F412D676BBD5Ac84Abb1be0138b2Db95d961";
 
 // ABI must exactly match CertificateVerification.sol
 const contractABI = [
