@@ -1,4 +1,5 @@
 console.log("ALCHEMY_URL:", process.env.ALCHEMY_URL);
+console.log("PRIVATE_KEY exists:", !!process.env.PRIVATE_KEY);
 
 const { ethers } = require("ethers");
 require("dotenv").config();
