@@ -1,3 +1,5 @@
+console.log("ALCHEMY_URL:", process.env.ALCHEMY_URL);
+
 const { ethers } = require("ethers");
 require("dotenv").config();
 
