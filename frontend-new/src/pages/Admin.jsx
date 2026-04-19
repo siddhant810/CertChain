@@ -348,9 +348,10 @@ export default function Admin() {
               <div className="admin-welcome-sub">Logged in as <strong>{user?.username}</strong></div>
             </div>
           </div>
-          <button className="btn btn-outline logout-btn" onClick={logout}>
-            Sign out
-          </button>
+          <div style={{ display: "flex", gap: 10 }}>
+            <a href="/" className="btn btn-outline logout-btn">🏠 Home</a>
+            <button className="btn btn-outline logout-btn" onClick={logout}>Sign out</button>
+          </div>
         </div>
       </div>
 

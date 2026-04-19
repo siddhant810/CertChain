@@ -1,7 +1,9 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import API from "../api";
 import "./Verify.css";
 
-const API = "https://certchain-backend-veyk.onrender.com";
 
 function formatDate(unixTimestamp) {
   const ts = Number(unixTimestamp);
@@ -19,6 +21,26 @@ export default function Verify() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const fileRef = useRef();
+
+  const { user } = useAuth();
+const navigate = useNavigate();
+
+if (!user) {
+  return (
+    <div className="page" style={{ textAlign: "center", paddingTop: 80 }}>
+      <div style={{ fontSize: 48, marginBottom: 16 }}>🔒</div>
+      <h2 style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)", marginBottom: 12 }}>
+        Login Required
+      </h2>
+      <p style={{ color: "var(--text-secondary)", marginBottom: 28 }}>
+        You need to be logged in to verify certificates.
+      </p>
+      <button className="btn btn-gold" onClick={() => navigate("/login")}>
+        Go to Login
+      </button>
+    </div>
+  );
+}
 
   const reset = () => { setResult(null); setFile(null); setHash(""); };
 
