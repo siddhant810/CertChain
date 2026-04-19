@@ -158,7 +158,7 @@ app.post("/verify-certificate-file", upload.single("certificate"), async (req, r
       return res.json({ valid: false, message: "Certificate not found on blockchain" });
     }
 
-    if (!cert?.[4]) return res.json({ valid: false, message: "Certificate revoked or invalid" });
+    if (!cert?.[4]) return res.json({ valid: false, message: "Certificate has been revoked or marked invalid by the issuing authority." });
 
     return res.json({
       valid: true, hash,
@@ -188,7 +188,7 @@ app.post("/verify-certificate-hash", async (req, res) => {
       return res.json({ valid: false, message: "Certificate not found on blockchain" });
     }
 
-    if (!cert?.[4]) return res.json({ valid: false, message: "Certificate revoked or invalid" });
+    if (!cert?.[4]) return res.json({ valid: false, message: "Certificate has been revoked or marked invalid by the issuing authority." });
 
     return res.json({
       valid: true, hash,
