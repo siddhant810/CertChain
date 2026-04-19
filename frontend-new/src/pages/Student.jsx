@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Student.css";
 
-const API = "http://localhost:5000";
+const API = "https://certchain-backend-veyk.onrender.com";
 
 function formatDate(unixTimestamp) {
   const ts = Number(unixTimestamp);

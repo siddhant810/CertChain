@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Admin.css";
 
-const API = "http://localhost:5000";
+const API = "https://certchain-backend-veyk.onrender.com";
 
 const CERT_TYPES = [
   { value: "Certificate of Completion",    icon: "🎓", desc: "Awarded upon finishing a course or program" },
