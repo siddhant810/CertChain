@@ -1,0 +1,161 @@
+.student-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.student-search {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.student-result {
+  position: sticky;
+  top: 100px;
+}
+
+.hash-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Empty state */
+.empty-state {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* PDF diagram */
+.where-to-find {
+  padding: 24px;
+}
+
+.pdf-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.pdf-preview {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pdf-line {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border-bright);
+}
+
+.gold-line {
+  width: 70%;
+  margin: 0 auto;
+  background: var(--gold-dim);
+}
+
+.short-line {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.pdf-footer {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.pdf-hash-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cyan);
+  letter-spacing: 0.08em;
+}
+
+.pdf-caption {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Certificate visual */
+.cert-visual {
+  background: linear-gradient(135deg, #0f1a2e 0%, #0a1020 100%);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-gold);
+}
+
+.cert-visual-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.cert-visual-name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.cert-visual-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.cert-visual-course {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.cert-visual-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .student-layout { grid-template-columns: 1fr; }
+  .student-result { position: static; }
+}

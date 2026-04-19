@@ -1,0 +1,164 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.card-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.issue-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.process-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.process-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.process-n {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.revoke-card {
+  border-color: rgba(255,77,109,0.2);
+}
+
+@media (max-width: 768px) {
+  .admin-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Certificate Type Selector ── */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.type-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.type-tile:hover {
+  border-color: var(--border-bright);
+  background: var(--bg-card-hover);
+}
+
+.type-tile.selected {
+  border-color: var(--gold);
+  background: var(--gold-glow);
+  box-shadow: 0 0 0 1px var(--gold-dim);
+}
+
+.type-tile-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.type-tile-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.type-tile.selected .type-tile-label {
+  color: var(--gold);
+}
+
+.type-selected-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius-sm);
+  animation: fadeUp 0.2s ease;
+}
+
+.type-badge {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.type-selected-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}

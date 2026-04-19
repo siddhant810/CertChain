@@ -1,0 +1,72 @@
+.verify-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.verify-tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.verify-tab:hover {
+  color: var(--text-primary);
+}
+
+.verify-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.verify-body {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.drop-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.drop-filename {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--green);
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.drop-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.result-message {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
