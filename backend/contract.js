@@ -1,14 +1,13 @@
 const { ethers } = require("ethers");
-
 require("dotenv").config();
 
+// ✅ Provider (Sepolia via Alchemy)
 const provider = new ethers.providers.JsonRpcProvider(process.env.ALCHEMY_URL);
 
-const privateKey =
-  "317f66e064447c1ffbb70e432c50c3808f6f5a6e6e08a79cdb1aaae2eaa8e3c8";
-
+// ✅ Wallet (from ENV)
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
+// ✅ Your deployed contract
 const contractAddress = "0xfCB8F412D676BBD5Ac84Abb1be0138b2Db95d961";
 
 // ABI must exactly match CertificateVerification.sol
