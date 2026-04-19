@@ -4,21 +4,30 @@ console.log("PRIVATE_KEY exists:", !!process.env.PRIVATE_KEY);
 const { ethers } = require("ethers");
 require("dotenv").config();
 
-// ✅ Provider (Sepolia via Alchemy)
 const ALCHEMY_URL = process.env.ALCHEMY_URL;
 
 if (!ALCHEMY_URL) {
-  throw new Error("ALCHEMY_URL is missing ❌");
+  throw new Error("❌ ALCHEMY_URL is missing");
 }
 
-const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_URL, {
-  name: "sepolia",
-  chainId: 11155111,
-});
+// 🔥 FORCE STATIC PROVIDER (NO AUTO-DETECTION)
+const provider = new ethers.providers.StaticJsonRpcProvider(
+  ALCHEMY_URL,
+  {
+    name: "sepolia",
+    chainId: 11155111,
+  }
+);
 
-provider.getNetwork()
-  .then((net) => console.log("Connected to:", net))
-  .catch((err) => console.error("Network error:", err));
+// 🔥 FORCE CONNECTION TEST
+(async () => {
+  try {
+    const block = await provider.getBlockNumber();
+    console.log("✅ Connected to Sepolia. Block:", block);
+  } catch (err) {
+    console.error("❌ Provider connection failed:", err);
+  }
+})();
 
 // ✅ Wallet (from ENV)
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
