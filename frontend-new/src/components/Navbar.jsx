@@ -1,7 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => navigate("/login");
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
@@ -14,20 +20,34 @@ export default function Navbar() {
           <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} end>
             Home
           </NavLink>
-          <NavLink to="/admin" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-            Issue
-          </NavLink>
           <NavLink to="/verify" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
             Verify
           </NavLink>
-          <NavLink to="/student" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-            Student
-          </NavLink>
         </div>
 
-        <div className="navbar-status">
-          <span className="pulse-dot" style={{ color: "#00e5a0" }}></span>
-          <span className="status-text">Hardhat Local</span>
+        <div className="navbar-right">
+          <div className="navbar-status">
+            <span className="pulse-dot" style={{ color: "#00e5a0" }} />
+            <span className="status-text">Sepolia Testnet</span>
+          </div>
+
+          {user ? (
+            <div className="navbar-user">
+              <span className="navbar-user-badge">
+                {user.role === "admin" ? "🛡️" : "🎓"} {user.username}
+              </span>
+              <NavLink
+                to={user.role === "admin" ? "/admin" : "/student"}
+                className="btn btn-outline nav-btn"
+              >
+                Dashboard
+              </NavLink>
+            </div>
+          ) : (
+            <button className="btn btn-gold nav-btn" onClick={handleLoginClick}>
+              Sign In
+            </button>
+          )}
         </div>
       </div>
     </nav>
