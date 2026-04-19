@@ -71,3 +71,6 @@ const contractABI = [
 const contract = new ethers.Contract(contractAddress, contractABI, wallet);
 
 module.exports = contract;
+
+console.log("Provider:", process.env.ALCHEMY_URL);
+console.log("Wallet loaded:", wallet.address);
