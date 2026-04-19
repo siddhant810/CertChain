@@ -171,7 +171,7 @@ export default function Verify() {
               <span className="result-message">
                 {result.valid
                   ? "This certificate is authentic and verified on the blockchain."
-                  : result.message || "Certificate could not be verified."}
+                  : result.message || "Certificate is either INVALID or REVOKED by the issuing authorities!"}
               </span>
             </div>
 
