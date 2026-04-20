@@ -200,3 +200,19 @@
   letter-spacing: 0.08em;
   margin-top: 28px;
 }
+
+.back-home-btn {
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.back-home-btn:hover {
+  color: var(--gold);
+}
