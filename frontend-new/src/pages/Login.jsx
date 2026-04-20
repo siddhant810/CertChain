@@ -50,12 +50,14 @@ export default function Login() {
       <div className="login-glow" aria-hidden="true" />
 
       <div className="login-container">
+        {/* Back button — top left corner of card */}
+        <a href="/" className="back-home-btn">← Back to Home</a>
+
         {/* Logo */}
         <div className="login-brand">
-  <span className="login-brand-icon">⛓</span>
-  <span className="login-brand-name">CertChain</span>
-</div>
-<a href="/" className="back-home-btn">← Back to Home</a>
+          <span className="login-brand-icon">⛓</span>
+          <span className="login-brand-name">CertChain</span>
+        </div>
 
         <h1 className="login-title">Welcome back</h1>
         <p className="login-subtitle">Select your role to continue</p>
