@@ -6,7 +6,7 @@ const features = [
     icon: "🎓",
     title: "Issue Certificates",
     desc: "Generate tamper-proof academic certificates stored permanently on the Ethereum blockchain.",
-    link: "/admin",
+    link: "/login",
     label: "Go to Issue →",
     color: "gold",
   },
@@ -54,7 +54,7 @@ export default function Home() {
             Every credential is cryptographically secured and publicly auditable.
           </p>
           <div className="hero-actions">
-            <Link to="/admin" className="btn btn-gold">Issue Certificate</Link>
+            <Link to="/login" className="btn btn-gold">Issue Certificate</Link>
             <Link to="/verify" className="btn btn-outline">Verify a Certificate</Link>
           </div>
         </div>

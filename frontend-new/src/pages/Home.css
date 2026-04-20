@@ -215,3 +215,14 @@
   .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
   .stat-item:nth-child(even) { border-left: 1px solid var(--border); }
 }
+
+/* ── Hero title fix — proper size and alignment ── */
+.hero-title {
+  font-size: clamp(30px, 4vw, 54px) !important;
+  line-height: 1.18 !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
