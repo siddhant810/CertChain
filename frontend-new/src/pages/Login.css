@@ -233,3 +233,10 @@
   box-shadow: 0 0 14px rgba(201,168,76,0.25);
   color: var(--gold);
 }
+
+/* Override — move back button outside the card to top-left of page */
+.back-home-btn {
+  position: fixed !important;
+  top: 24px !important;
+  left: 24px !important;
+}
