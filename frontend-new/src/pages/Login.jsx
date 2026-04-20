@@ -52,9 +52,10 @@ export default function Login() {
       <div className="login-container">
         {/* Logo */}
         <div className="login-brand">
-          <span className="login-brand-icon">⛓</span>
-          <span className="login-brand-name">CertChain</span>
-        </div>
+  <span className="login-brand-icon">⛓</span>
+  <span className="login-brand-name">CertChain</span>
+</div>
+<a href="/" className="back-home-btn">← Back to Home</a>
 
         <h1 className="login-title">Welcome back</h1>
         <p className="login-subtitle">Select your role to continue</p>
